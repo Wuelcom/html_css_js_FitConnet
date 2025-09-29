@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador</title>
+  <link rel="stylesheet" href="Admin.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="../img/logo.png" alt="Fitconnet" class="logo">
+    </div>
+
+    <!-- Botón menú -->
+    <div class="menu-container">
+      <button class="menu-btn">☰ Menú</button>
+      <ul class="dropdown">
+        <li><a href="#">Gestión de Usuarios</a></li>
+        <li><a href="#">Gestión de Planes</a></li>
+        <li><a href="#">Configuraciones</a></li>
+        <li><a href="#">Reportes</a></li>
+      </ul>
+    </div>
+
+    <!-- Navegación -->
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Nuestros Servicios</a>
+      <a href="#">Nuestros Planes</a>
+      <a href="#">Contacto</a>
+    </nav>
+
+    <!-- Botones -->
+    <div class="actions">
+      <button>Chatear con la IA</button>
+      <img src="../img/Profile_user.png" alt="Perfil" class="profile-pic">
+      <img src="../img/Cerrar_sesion.png" alt="Cerrar Sesión" class="logout-btn" onclick="logout()">
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="content">
+    <h1>Bienvenido Administrador</h1>
+
+    <!-- Carrusel -->
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-item">Gestión de Usuarios</div>
+        <div class="carousel-item">Gestión de Planes</div>
+        <div class="carousel-item">Configuraciones</div>
+        <div class="carousel-item">Reportes</div>
+      </div>
+
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const dropdown = document.querySelector('.dropdown');
+    const track = document.querySelector('.carousel-track');
+    const items = Array.from(track.children);
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+
+    let index = 0;
+
+    // Menú desplegable
+    menuBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      dropdown.classList.toggle('show');
+    });
+
+    document.querySelectorAll('.dropdown a').forEach(link => {
+      link.addEventListener('click', () => {
+        dropdown.classList.remove('show');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!dropdown.contains(event.target) && !menuBtn.contains(event.target)) {
+        dropdown.classList.remove('show');
+      }
+    });
+
+    // Función de carrusel
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % items.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + items.length) % items.length;
+      updateCarousel();
+    });
+
+    // Cerrar sesión
+    function logout() {
+      alert("Sesión cerrada correctamente.");
+      window.location.href = "/login/login.html";
+    }
+  </script>
+</body>
+</html>

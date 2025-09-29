@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - FitConnet</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Imagen izquierda -->
+    <div class="left">
+      <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77" alt="gym">
+    </div>
+
+    <!-- Formulario derecha -->
+    <div class="right">
+      <div class="logo">
+        <img src="logo.png" alt="Logo Fitconnet">
+        <h1>FitConnet</h1>
+      </div>
+
+      <div class="login-box">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label for="usuario">Usuario:</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" required>
+
+          <label for="contrasena">Contraseña:</label>
+          <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+
+          <button type="submit" class="btn">Iniciar Sesión</button>
+        </form>
+
+        <div class="extra-links">
+          <a href="../registro/register.html">Crear cuenta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para manejar login -->
+  <script src="login.js"></script>
+</body>
+</html>
