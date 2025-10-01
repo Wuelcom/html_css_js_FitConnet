@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Fitconnet</title>
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="section1">
+    <div class="menu-container">
+      <div class="menu-button">☰</div>
+      <div class="menu-content">
+        <a href="#">Mis Entrenamientos</a>
+        <a href="#">Mi Plan</a>
+        <a href="#">Progreso</a>
+      </div>
+    </div>
+    <img src="/img/logo.png" class="logo" alt="Logo Fitconnet">
+    <div class="center-buttons">
+      <button onclick="goToHome()">Inicio</button>
+      <button>Nuestros Servicios</button>
+      <button>Nuestros Planes</button>
+      <button>Contacto</button>
+    </div>
+    
+    <div class="right-buttons">
+      <button onclick="goToProfile()">Perfil</button>
+      <button onclick="logout()">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <!-- Contenedor del perfil -->
+  <div class="profile-container">
+    <!-- Header del perfil -->
+    <div class="profile-header">
+      <div class="profile-photo-container">
+        <img src="/img/Profile_user.png" alt="Foto de perfil" class="profile-photo">
+        <div class="photo-badge">+</div>
+      </div>
+      
+      <div class="profile-main-info">
+        <h1 class="username">carlosbelcast <span class="verified">✓</span></h1>
+        <p class="user-type">Deportista</p>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-number">1030</div>
+            <div class="stat-label">Publicaciones</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1000</div>
+            <div class="stat-label">Seguidores</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">300</div>
+            <div class="stat-label">Seguidos</div>
+          </div>
+        </div>
+
+        <button class="edit-profile-btn" onclick="editProfile()">Editar Perfil</button>
+      </div>
+
+      <div class="progress-chart">
+        <img src="https://via.placeholder.com/150/6a5acd/FFFFFF?text=Grafico" alt="Registro de avances">
+        <p>Registro de Avances</p>
+      </div>
+    </div>
+
+    <!-- Información personal -->
+    <div class="info-section">
+      <h2>Información Personal</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Email</div>
+          <div class="info-value">usuario@fitconnet.com</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Teléfono</div>
+          <div class="info-value">+57 300 987 6543</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Plan Actual</div>
+          <div class="info-value">Premium Mensual</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Fecha de registro</div>
+          <div class="info-value">20 de Marzo, 2024</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Objetivo</div>
+          <div class="info-value">Aumento de masa muscular</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Entrenador Asignado</div>
+          <div class="info-value">Juan Pérez</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de logros -->
+    <div class="achievements-section">
+      <h2>Mis Logros</h2>
+      <div class="achievements-grid">
+        <div class="achievement-item">
+          <div class="achievement-icon">🏆</div>
+          <p>Primera semana</p>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-icon">💪</div>
+          <p>10 entrenamientos</p>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-icon">🔥</div>
+          <p>Racha de 7 días</p>
+        </div>
+        <div class="achievement-item locked">
+          <div class="achievement-icon">⭐</div>
+          <p>Bloqueado</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Galería -->
+    <div class="gallery-section">
+      <h2>Mis Publicaciones</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/6a5acd/FFFFFF?text=Foto+1" alt="Publicación 1">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/6a5acd/FFFFFF?text=Foto+2" alt="Publicación 2">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/6a5acd/FFFFFF?text=Foto+3" alt="Publicación 3">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/6a5acd/FFFFFF?text=Foto+4" alt="Publicación 4">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/6a5acd/FFFFFF?text=Foto+5" alt="Publicación 5">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/6a5acd/FFFFFF?text=Foto+6" alt="Publicación 6">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Menú desplegable
+    const menuButton = document.querySelector('.menu-button');
+    const menuContent = document.querySelector('.menu-content');
+    const menuContainer = document.querySelector('.menu-container');
+
+    menuButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+      menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!menuContainer.contains(event.target)) {
+        menuContent.style.display = 'none';
+      }
+    });
+
+    // Función para editar perfil
+    function editProfile() {
+      alert('Redirigiendo a editar perfil...');
+      // window.location.href = 'editar_perfil.html';
+    }
+
+    // Función para ir al perfil
+    function goToProfile() {
+      window.location.reload();
+    }
+
+    // Función para ir al inicio
+    function goToHome() {
+      window.location.href = '/principal/user/user.html';
+    }
+
+    // Cerrar sesión
+    function logout() {
+      if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+        alert('Sesión cerrada correctamente.');
+        window.location.href = '/login/login.html';
+      }
+    }
+  </script>
+</body>
+</html>

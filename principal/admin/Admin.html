@@ -10,7 +10,7 @@
   <!-- Barra de navegación -->
   <header class="navbar">
     <div class="logo-container">
-      <img src="../img/logo.png" alt="Fitconnet" class="logo">
+      <img src="/img/logo.png" alt="Fitconnet" class="logo">
     </div>
 
     <!-- Botón menú -->
@@ -34,8 +34,7 @@
 
     <!-- Botones -->
     <div class="actions">
-      <button>Chatear con la IA</button>
-      <img src="../img/Profile_user.png" alt="Perfil" class="profile-pic">
+      <img src="../img/Profile_user.png" alt="Perfil" class="profile-pic" onclick="goToProfile()">
       <img src="../img/Cerrar_sesion.png" alt="Cerrar Sesión" class="logout-btn" onclick="logout()">
     </div>
   </header>
@@ -101,6 +100,11 @@
       index = (index - 1 + items.length) % items.length;
       updateCarousel();
     });
+
+    // Ir al perfil
+   function goToProfile() {
+      window.location.href = '/perfil/admin_perfil/admin_perfil.html';
+    }
 
     // Cerrar sesión
     function logout() {

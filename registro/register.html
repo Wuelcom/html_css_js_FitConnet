@@ -1,120 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro - FitConnet</title>
-  <link rel="stylesheet" href="register.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitconnet - Registro</title>
+    <link rel="stylesheet" href="/registro/register.css">
 </head>
 <body>
-  <div class="panel-container">
-    
-    <!-- Lado izquierdo: formulario -->
-    <div class="registro-container">
-      <h2>Crear cuenta</h2>
-      <form id="registroForm">
-          
-          <!-- Nombre -->
-          <label for="nombre">Nombre de usuario:</label>
-          <input type="text" id="nombre" name="nombre" required>
+    <div class="container">
+        <!-- Panel izquierdo -->
+        <div class="left-panel">
+            <div class="logo">
+                <img src="/img/logo.png" alt="Logo Fitconnet">
+                <h1>Fitconnet</h1>
+            </div>
+            
+            <div class="form-box">
+                <h2><em>Crear Cuenta</em></h2>
+                
+                <form>
+                    <input type="text" placeholder="Nombre usuario:" required>
+                    <input type="email" placeholder="Correo" required>
+                    <input type="password" placeholder="Contraseña:" required>
 
-          <!-- Correo -->
-          <label for="correo">Correo electrónico:</label>
-          <input type="email" id="correo" name="correo" required>
+                    <select required>
+                        <option value="" disabled selected>Selecciona un objetivo:</option>
+                        <option value="perder_peso">Perder peso</option>
+                        <option value="ganar_masa">Ganar masa muscular</option>
+                        <option value="mantener_forma">Mantener forma</option>
+                    </select>
 
-          <!-- Contraseña -->
-          <label for="contrasena">Contraseña:</label>
-          <input type="password" id="contrasena" name="contrasena" required>
+                    <select required>
+                        <option value="" disabled selected>Selecciona un rol:</option>
+                        <option value="usuario">Usuario</option>
+                        <option value="entrenador">Entrenador</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
 
-          <!-- Verificación contraseña -->
-          <label for="verificar_contrasena">Verificación contraseña:</label>
-          <input type="password" id="verificar_contrasena" name="verificar_contrasena" required>
+                    <button type="submit">Crear</button>
+                </form>
+                
+                <p class="facebook-text">Iniciar sesión con Facebook</p>
+                <button class="facebook-btn">
+                    <img src="facebook-icon.png" alt="Facebook"> Facebook
+                </button>
+            </div>
+        </div>
 
-          <!-- Rol -->
-          <label for="rol">Rol:</label>
-          <select id="rol" name="rol" required>
-            <option value="usuario">Usuario</option>
-            <option value="administrador">Administrador</option>
-            <option value="nutricionista">Nutricionista</option>
-            <option value="entrenador">Entrenador</option>
-          </select>
-
-          <!-- Objetivo -->
-          <div id="objetivo-container">
-            <label for="id_objetivo">Objetivo:</label>
-            <select id="id_objetivo" name="id_objetivo" required>
-              <option value="1">Perder peso</option>
-              <option value="2">Ganar masa muscular</option>
-              <option value="3">Mejorar resistencia</option>
-            </select>
-          </div>
-
-          <!-- Botón -->
-          <button type="submit" class="btn">Registrar</button>
-      </form>
-
-      <!-- Link al login -->
-      <a href="../login/login.html" class="btn btn-secondary">Volver al login</a>
+        <!-- Panel derecho con imagen -->
+        <div class="right-panel">
+            <img src="/img/Configuracion.jpg" alt="Personas entrenando">
+        </div>
     </div>
-
-    <!-- Lado derecho -->
-    <div class="panel-right">
-      <p>Bienvenido a <br><strong>FitConnet</strong><br> Tu camino hacia una vida más activa 🚀</p>
-    </div>
-  </div>
-
-  <script>
-    const rolSelect = document.getElementById("rol");
-    const objetivoContainer = document.getElementById("objetivo-container");
-    const objetivoSelect = document.getElementById("id_objetivo");
-
-    // Si es admin → ocultar objetivos
-    rolSelect.addEventListener("change", () => {
-      if (rolSelect.value === "administrador") {
-        objetivoContainer.style.display = "none";
-        objetivoSelect.removeAttribute("required");
-      } else {
-        objetivoContainer.style.display = "block";
-        objetivoSelect.setAttribute("required", "true");
-      }
-    });
-
-    // Guardar usuario en localStorage
-    document.getElementById("registroForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const nombre = document.getElementById("nombre").value;
-      const correo = document.getElementById("correo").value;
-      const contrasena = document.getElementById("contrasena").value;
-      const verificar = document.getElementById("verificar_contrasena").value;
-      const rol = rolSelect.value;
-      const objetivo = objetivoSelect.value;
-
-      if (contrasena !== verificar) {
-        alert("Las contraseñas no coinciden ❌");
-        return;
-      }
-
-      // Traer usuarios guardados
-      let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-      // Crear usuario nuevo
-      let nuevoUsuario = { nombre, correo, contrasena, rol };
-
-      // Solo guarda objetivo si no es admin
-      if (rol !== "administrador") {
-        nuevoUsuario.objetivo = objetivo;
-      }
-
-      // Guardar en el array y en localStorage
-      usuarios.push(nuevoUsuario);
-      localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-      alert("Usuario registrado con éxito ✅");
-
-      // Redirigir al login
-      window.location.href = "../login/login.html";
-    });
-  </script>
 </body>
 </html>

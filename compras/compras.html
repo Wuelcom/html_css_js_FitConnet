@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar Plan - Fitconnet</title>
+  <link rel="stylesheet" href="/compras/compras.css">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Panel Izquierdo (Imagen) -->
+    <div class="left-panel">
+      <img src="runner.jpg" alt="Persona corriendo">
+    </div>
+    
+    <!-- Panel Derecho (Formulario) -->
+    <div class="right-panel">
+      <div class="logo">
+        <img src="/img/logo.png" alt="Logo Fitconnet">
+        <h1>Fitconnet</h1>
+      </div>
+
+      <div class="form-box">
+        <h2><em>Comprar</em></h2>
+        <form>
+          <div class="input-box">
+            <label for="plan"><strong>Elije tu plan:</strong></label>
+            <select id="plan" name="plan">
+              <option value="basico">plan 1</option>
+              <option value="intermedio">plan 2</option>
+              <option value="premium">plan 3</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <label for="fecha"><strong>Fecha de Inicio:</strong></label>
+            <input type="date" id="fecha" name="fecha">
+          </div>
+
+          <div class="input-box">
+            <label for="correo"><strong>Correo:</strong></label>
+            <input type="email" id="correo" name="correo" placeholder="example@email.com" required>
+          </div>
+
+          <button type="submit" class="btn">Comprar</button>
+        </form>
+        <p class="footer">Pagas con: <strong>(COP)</strong></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

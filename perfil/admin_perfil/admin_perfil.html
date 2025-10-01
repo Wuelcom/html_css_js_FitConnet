@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Administrador</title>
+  <link rel="stylesheet" href="admin_perfil.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="/img/logo.png" alt="Fitconnet" class="logo">
+    </div>
+
+    <div class="menu-container">
+      <button class="menu-btn">☰ Menú</button>
+      <ul class="dropdown">
+        <li><a href="#">Gestión de Usuarios</a></li>
+        <li><a href="#">Gestión de Planes</a></li>
+        <li><a href="#">Configuraciones</a></li>
+        <li><a href="#">Reportes</a></li>
+      </ul>
+    </div>
+
+    <nav>
+      <a href="/principal/admin/Admin.html">Inicio</a>
+      <a href="#">Nuestros Servicios</a>
+      <a href="#">Nuestros Planes</a>
+      <a href="#">Contacto</a>
+    </nav>
+
+    <div class="actions">
+      <img src="/img/Profile_user.png" alt="Perfil" class="profile-pic" onclick="goToProfile()">
+      <img src="/img/Cerrar_sesion.png" alt="Cerrar Sesión" class="logout-btn" onclick="logout()">
+    </div>
+  </header>
+
+  <!-- Contenedor del perfil -->
+  <div class="profile-container">
+    <!-- Header del perfil -->
+    <div class="profile-header">
+      <img src="/img/Profile_user.png" alt="Foto de perfil" class="profile-photo">
+      <h1 class="username">carlosbelcast</h1>
+      <span class="verified">✓ Verificado</span>
+      <p class="user-type">Administrador</p>
+      
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-number">1030</div>
+          <div class="stat-label">Publicaciones</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1000</div>
+          <div class="stat-label">Seguidores</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">300</div>
+          <div class="stat-label">Seguidos</div>
+        </div>
+      </div>
+
+      <button class="edit-profile-btn" onclick="editProfile()">Editar Perfil</button>
+    </div>
+
+    <!-- Información personal -->
+    <div class="info-section">
+      <h2>Información Personal</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Email</div>
+          <div class="info-value">admin@fitconnet.com</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Teléfono</div>
+          <div class="info-value">+57 300 123 4567</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Fecha de registro</div>
+          <div class="info-value">15 de Enero, 2024</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Última actividad</div>
+          <div class="info-value">Hoy, 14:30</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Galería -->
+    <div class="gallery-section">
+      <h2>Registro de Avances</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/330033/FFFFFF?text=Foto+1" alt="Avance 1">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/330033/FFFFFF?text=Foto+2" alt="Avance 2">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/330033/FFFFFF?text=Foto+3" alt="Avance 3">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/330033/FFFFFF?text=Foto+4" alt="Avance 4">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/330033/FFFFFF?text=Foto+5" alt="Avance 5">
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/150/330033/FFFFFF?text=Foto+6" alt="Avance 6">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Menú desplegable
+    const menuBtn = document.querySelector('.menu-btn');
+    const dropdown = document.querySelector('.dropdown');
+
+    menuBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      dropdown.classList.toggle('show');
+    });
+
+    document.querySelectorAll('.dropdown a').forEach(link => {
+      link.addEventListener('click', () => {
+        dropdown.classList.remove('show');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!dropdown.contains(event.target) && !menuBtn.contains(event.target)) {
+        dropdown.classList.remove('show');
+      }
+    });
+
+    // Función para editar perfil
+    function editProfile() {
+      alert('Redirigiendo a editar perfil...');
+      // Aquí puedes redirigir a una página de edición
+      // window.location.href = 'editar_perfil.html';
+    }
+
+    // Función para ir al perfil (ya estamos en perfil, así que podría ir a inicio)
+    function goToProfile() {
+      // Ya estamos en el perfil, así que no hace nada o vuelve a cargar
+      window.location.reload();
+    }
+
+    // Cerrar sesión
+    function logout() {
+      if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+        alert('Sesión cerrada correctamente.');
+        window.location.href = '/login/login.html';
+      }
+    }
+  </script>
+</body>
+</html>

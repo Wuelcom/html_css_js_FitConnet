@@ -42,6 +42,8 @@
 }
 .logo img {
   width: 60px;
+  border-radius: 5px;
+
 }
 .logo h1 {
   font-size: 32px;

@@ -17,6 +17,48 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
+  gap: 20px;
+}
+
+.logo-container {
+  margin-left: 0;
+  flex: 0 0 auto;
+}
+
+/* MENU - Ajustado para quedar más a la izquierda */
+.menu-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: 10px;
+  flex: 0 0 auto;
+}
+
+/* NAV - Centrado absoluto */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+/* Adjust carousel position */
+.content {
+  margin-top: 350px;
 }
 
 /* LOGO */
@@ -24,6 +66,7 @@ body {
   height: 60px;
   filter: drop-shadow(0 0 10px rgba(128, 0, 128, 0.7));
   transition: filter 0.3s ease;
+  border-radius: 5px;
 }
 
 .logo:hover {
@@ -45,10 +88,6 @@ body {
 }
 
 /* MENU */
-.menu-container {
-  position: relative;
-}
-
 .menu-btn {
   background: #800080;
   color: white;
@@ -131,12 +170,6 @@ nav a:hover {
 }
 
 /* Botones de acciones */
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .actions button {
   background: white;
   color: black;
@@ -160,7 +193,7 @@ nav a:hover {
 }
 
 .content h1 {
-  margin-bottom: 30px;
+  margin-bottom: 150px;
   text-shadow: 0 0 8px rgba(160, 32, 240, 0.7);
 }
 
@@ -199,8 +232,8 @@ nav a:hover {
 /* ========================= */
 .carousel {
   position: relative;
-  width: 80%;
-  max-width: 900px;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
@@ -215,7 +248,7 @@ nav a:hover {
 
 .carousel-item {
   min-width: 100%;
-  padding: 80px 20px;
+  padding: 120px 20px;
   text-align: center;
   font-size: 28px;
   font-weight: bold;

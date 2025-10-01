@@ -88,17 +88,6 @@ body {
     color: white;
 }
 
-.login-button {
-    background: purple;
-    color: white;
-    margin: 0 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 50px;
-    font-size: 18px;
-}
-
 .right-buttons button {
     background: #6a0dad;
     color: white;
@@ -213,11 +202,6 @@ section {
 .section5 {
     background: white;
     color: rgb(36, 36, 36);
-}
-
-.center-buttons {
-    margin-bottom: 20px;
-    
 }
 
 .post {

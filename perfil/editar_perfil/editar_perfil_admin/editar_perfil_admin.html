@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - Admin</title>
+    <link rel="stylesheet" href="editar_perfil_admin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✏️ Editar Perfil</h1>
+            <button class="btn-back" onclick="window.history.back()">← Volver</button>
+        </div>
+
+        <div id="successMessage" class="success-message">
+            <span>✓</span>
+            <span>Perfil actualizado exitosamente</span>
+        </div>
+
+        <form id="editProfileForm">
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <div class="photo-container">
+                        <img id="profileImg" src="" alt="Foto de perfil" style="display: none;">
+                        <div id="photoPlaceholder" class="photo-placeholder">👤</div>
+                    </div>
+                    <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                    <button type="button" class="btn-change-photo" onclick="document.getElementById('photoInput').click()">
+                        📷 Cambiar Foto
+                    </button>
+                    <div class="verified-badge">
+                        ✓ Verificado
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div>
+                        <h2 class="section-title">👤 Datos Personales</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nombre de Usuario</label>
+                                <input type="text" id="username" value="carlos belcast" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Género</label>
+                                <select id="gender">
+                                    <option value="masculino" selected>Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Peso (kg)</label>
+                                <input type="number" id="weight" value="62" min="30" max="300" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label>Altura (cm)</label>
+                                <input type="number" id="height" value="165" min="100" max="250">
+                            </div>
+                            <div class="form-group">
+                                <label>Edad</label>
+                                <input type="number" id="age" value="25" min="13" max="120">
+                            </div>
+                            <div class="form-group">
+                                <label>Horas de Dormir</label>
+                                <input type="number" id="sleep" value="8" min="0" max="24" step="0.5">
+                            </div>
+                            <div class="form-group">
+                                <label>Vasos de Agua al Día</label>
+                                <input type="number" id="water" value="8" min="0" max="20">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email" value="carlos@example.com">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="section-title">🏋️ Estadísticas de Entrenamiento</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-info">
+                            <h3 id="streakDisplay">10</h3>
+                            <p>Racha de días</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🔁</div>
+                        <div class="stat-info">
+                            <h3 id="repsDisplay">20</h3>
+                            <p>Repeticiones</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-info">
+                            <h3 id="achievementsDisplay">45</h3>
+                            <p>Logros alcanzados</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-info">
+                            <h3 id="hoursDisplay">0h</h3>
+                            <p>Horas de práctica</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid" style="margin-top: 20px;">
+                    <div class="form-group">
+                        <label>Editar Racha</label>
+                        <input type="number" id="streak" value="10" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Editar Repeticiones</label>
+                        <input type="number" id="reps" value="20" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Editar Logros</label>
+                        <input type="number" id="achievements" value="45" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Editar Horas (minutos)</label>
+                        <input type="number" id="hours" value="0" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="section-title">📊 Índice de Masa Corporal (IMC)</h2>
+                <div class="imc-section">
+                    <div class="imc-display">
+                        <div class="imc-value" id="imcValue">23.51</div>
+                        <div class="imc-label">Tu IMC actual</div>
+                        <div class="imc-label" id="imcCategory" style="color: #7c3aed; font-size: 16px; margin-top: 10px;">Peso Normal</div>
+                    </div>
+                    <div class="imc-chart">
+                        <div class="imc-indicator" id="imcIndicator"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; color: #aaa; font-size: 12px;">
+                        <span>Bajo</span>
+                        <span>Normal</span>
+                        <span>Sobrepeso</span>
+                        <span>Obesidad</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="section-title">📝 Información Adicional</h2>
+                <div class="form-group full-width">
+                    <label>Objetivos</label>
+                    <textarea id="goals" placeholder="Describe tus objetivos de fitness..."></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <label>Notas</label>
+                    <textarea id="notes" placeholder="Notas adicionales..."></textarea>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="button" class="btn-cancel" onclick="window.history.back()">Cancelar</button>
+                <button type="submit" class="btn-save">💾 Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="editar_perfil.js"></script>
+</body>
+</html>

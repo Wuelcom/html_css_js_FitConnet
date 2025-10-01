@@ -1,120 +1,132 @@
-/* Fondo general */
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
-  background: linear-gradient(135deg, #6c3483, #58d68d);
-  min-height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Contenedor principal dividido */
-.panel-container {
-  display: flex;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  overflow: hidden;
-  max-width: 900px;
-  width: 100%;
-  animation: fadeIn 0.7s ease-in-out;
+/* Contenedor principal */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
 }
 
-/* Animación de entrada */
-@keyframes fadeIn {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+/* Panel izquierdo */
+.left-panel {
+    width: 35%;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
 }
 
-/* Lado izquierdo (formulario) */
-.registro-container {
-  flex: 1;
-  padding: 36px 28px;
-  text-align: center;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.registro-container h2 {
-  color: #5a2ca0;
-  margin-bottom: 22px;
-  font-size: 22px;
-  font-weight: bold;
+.logo img {
+    width: 70px;
+    height: auto;
 }
 
-.registro-container label {
-  display: block;
-  margin-top: 14px;
-  font-weight: bold;
-  text-align: left;
-  font-size: 14px;
-  color: #333;
+.logo h1 {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-.registro-container input,
-.registro-container select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  transition: border 0.3s, box-shadow 0.3s;
+/* Caja formulario */
+.form-box {
+    background: #5c1380;
+    padding: 40px 30px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
 }
 
-.registro-container input:focus,
-.registro-container select:focus {
-  border-color: #5a2ca0;
-  box-shadow: 0 0 6px rgba(90, 44, 160, 0.5);
-  outline: none;
+.form-box h2 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: white;
 }
 
-/* Botones */
-.btn {
-  display: inline-block;
-  margin: 22px 0 0 0;
-  padding: 12px 26px;
-  background: #5a2ca0;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 16px;
-  transition: background 0.3s, transform 0.2s;
-  cursor: pointer;
+.form-box input, .form-box select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
-.btn:hover {
-  background: #7d3ceb;
-  transform: scale(1.05);
+.form-box button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-.btn-secondary {
-  background: #ccc;
-  color: #333;
-  margin-left: 8px;
+.form-box button:hover {
+    background: #ddd;
 }
 
-.btn-secondary:hover {
-  background: #aaa;
+/* Texto y botón Facebook */
+.facebook-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
 }
 
-/* Lado derecho (imagen o mensaje) */
-.panel-right {
-  flex: 1;
-  background: url("https://images.unsplash.com/photo-1571019613914-85f342c47e9a?q=80&w=1200") no-repeat center center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-  padding: 20px;
+.facebook-btn {
+    margin-top: 10px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.facebook-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Panel derecho con imagen */
+.right-panel {
+    width: 65%;
+    height: 100%;
+}
+
+.right-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

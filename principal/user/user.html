@@ -2,29 +2,29 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>FitConnet - Sin iniciar sesión</title>
-        <link rel="stylesheet" href="./sin_iniciar.css">
+        <title>FitConnet</title>
+        <link rel="stylesheet" href="./user.css">
     </head>
-    <body>
     <header class="section1">
         <div class="menu-container">
             <div class="menu-button">☰</div>
             <div class="menu-content">
-                <a href="/login/login.html">Iniciar Sesión</a>
-                <a href="/registro/register.html">Registrarse</a>
-
+                <a href="#">Nuestros Servicios</a>
+                <a href="#">Aviones</a>
+                <a href="#">Contacto</a>
             </div>
         </div>
         <img src="/img/logo.png" class="logo" alt="Logo Gimnasio">
         <div class="center-buttons">
-            <button onclick="location.href='/login/login.html'">Inicio</button>
-            <button onclick="location.href='/login/login.html'">Nuestros Servicios</button>
-            <button onclick="location.href='/login/login.html'">Nuestros Planes</button>
-            <button onclick="location.href='/login/login.html'">Contacto</button>
+            <button>Inicio</button>
+            <button>Nuestros Servicios</button>
+            <button>Nuestros Planes</button>
+            <button>Contacto</button>
         </div>
         <div class="right-buttons">
-            <button onclick="location.href='/login/login.html'">Iniciar Sesión</button>
-            <button onclick="location.href='/registro/register.html'">Registrarse</button>
+            <button id="chatIA">Chat</button>
+            <button id="perfil">Perfil</button>
+            <button id="cerrarSesion">Cerrar Sesión</button>
         </div>
     </header>
 
@@ -33,6 +33,7 @@
         <h1>Bienvenido a FitConnet</h1>
         <br><br>
         <img src="/img/Seccion2.png" alt="Gimnasio">
+        
     </section>
 
     <section class="section3">
@@ -41,17 +42,17 @@
             <div class="plan">
                 <img src="/img/plan_1.jpeg" alt="Plan 1">
                 Plan 1 - 1 mes - $50.000
-                <button onclick="location.href='../login/login.html'">Comprar</button>
+                <button onclick="location.href='/compras/compras.html'">Comprar</button>
             </div>
             <div class="plan">
                 <img src="/img/plan_2.jpeg" alt="Plan 2">
                 Plan 2 - 6 meses - $275.000
-                <button onclick="location.href='../login/login.html'">Comprar</button>
+                <button onclick="location.href='/compras/compras.html'">Comprar</button>
             </div>
             <div class="plan">
                 <img src="/img/plan_3.jpeg" alt="Plan 3">
                 Plan 3 - 1 año - $580.000
-                <button onclick="location.href='../login/login.html'">Comprar</button>
+                <button onclick="location.href='/compras/compras.html'">Comprar</button>
             </div>
         </div>
     </section>
@@ -78,10 +79,7 @@
     </section>
 
     <section class="section5">
-        <h2>Publicaciones de usuarios</h2>
-        <p>Para ver las publicaciones de usuarios, debes:</p>
-        <br>
-        <button class="login-button" onclick="location.href='/login/login.html'">Iniciar Sesión</button>
+        Publicaciones de usuarios
     </section>
 
     <section class="section6">
@@ -109,5 +107,4 @@
             </ul>
         </div>
     </footer>
-    </body>
 </html>
