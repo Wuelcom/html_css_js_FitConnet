@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios de Gym | FitConnet</title>
+  <link rel="stylesheet" href="gym.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="../../img/logo-fitconnet.png" alt="FitConnet Logo">
+      <span>FitConnet</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../../principal/user/user.html">Inicio</a></li>
+        <li><a href="../../ejercicios/gym/gym.html">Rutinas</a></li>
+        <li><a href="../../ejercicios/dietas/dietas.html">Dietas</a></li>
+        <li><a href="../../principal/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Ejercicios de Gimnasio</h1>
+      <p>Explora, crea y administra tus ejercicios personalizados para mejorar tu rendimiento físico. 💪</p>
+    </section>
+
+    <section class="form-section">
+      <h2>Agregar un Nuevo Ejercicio</h2>
+      <form id="form-ejercicio">
+        <input type="text" id="nombre" placeholder="Nombre del ejercicio" required>
+        <input type="text" id="musculo" placeholder="Grupo muscular (Ej: Pecho, Espalda, Piernas)" required>
+        <input type="number" id="series" placeholder="Series" min="1" required>
+        <input type="number" id="repeticiones" placeholder="Repeticiones" min="1" required>
+        <input type="text" id="imagen" placeholder="URL de imagen (opcional)">
+        <button type="submit">Agregar Ejercicio</button>
+      </form>
+    </section>
+
+    <section class="lista-ejercicios">
+      <h2>Mis Ejercicios</h2>
+      <div id="contenedor-ejercicios"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 FitConnet | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('form-ejercicio');
+    const contenedor = document.getElementById('contenedor-ejercicios');
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const ejerciciosGuardados = JSON.parse(localStorage.getItem('ejerciciosGym')) || [];
+      ejerciciosGuardados.forEach(e => agregarEjercicioHTML(e));
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const ejercicio = {
+        nombre: document.getElementById('nombre').value,
+        musculo: document.getElementById('musculo').value,
+        series: document.getElementById('series').value,
+        repeticiones: document.getElementById('repeticiones').value,
+        imagen: document.getElementById('imagen').value || '../../img/default-gym.jpg'
+      };
+
+      agregarEjercicioHTML(ejercicio);
+      guardarEjercicio(ejercicio);
+      form.reset();
+    });
+
+    function agregarEjercicioHTML(e) {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.innerHTML = `
+        <img src="${e.imagen}" alt="${e.nombre}">
+        <h3>${e.nombre}</h3>
+        <p><strong>Músculo:</strong> ${e.musculo}</p>
+        <p><strong>Series:</strong> ${e.series} | <strong>Reps:</strong> ${e.repeticiones}</p>
+        <button class="delete-btn">Eliminar</button>
+      `;
+      card.querySelector('.delete-btn').addEventListener('click', () => eliminarEjercicio(e.nombre, card));
+      contenedor.appendChild(card);
+    }
+
+    function guardarEjercicio(ejercicio) {
+      const ejercicios = JSON.parse(localStorage.getItem('ejerciciosGym')) || [];
+      ejercicios.push(ejercicio);
+      localStorage.setItem('ejerciciosGym', JSON.stringify(ejercicios));
+    }
+
+    function eliminarEjercicio(nombre, card) {
+      card.remove();
+      let ejercicios = JSON.parse(localStorage.getItem('ejerciciosGym')) || [];
+      ejercicios = ejercicios.filter(e => e.nombre !== nombre);
+      localStorage.setItem('ejerciciosGym', JSON.stringify(ejercicios));
+    }
+  </script>
+</body>
+</html>

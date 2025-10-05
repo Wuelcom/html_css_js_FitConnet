@@ -1,0 +1,141 @@
+/* ===== ESTILO GENERAL ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 10px 30px;
+  border-bottom: 3px solid #800080;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 6px;
+}
+
+.logo h1 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #800080;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #b100b1;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.main-content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.main-content h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #d8b4ff;
+}
+
+.main-content p {
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+/* ===== TARJETAS DE RUTINAS ===== */
+.rutinas-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.rutina-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rutina-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(128, 0, 128, 0.5);
+}
+
+.rutina-card img {
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.rutina-card h3 {
+  color: #d8b4ff;
+  margin: 10px 0;
+}
+
+.rutina-card p {
+  color: #bbb;
+  font-size: 14px;
+  padding: 0 15px 15px 15px;
+}
+
+/* Botón */
+.btn {
+  display: inline-block;
+  background-color: #800080;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #b100b1;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  background-color: #111;
+  padding: 15px;
+  font-size: 14px;
+  color: #aaa;
+  border-top: 2px solid #800080;
+}

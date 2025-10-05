@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios en Casa - FitConnet</title>
+  <link rel="stylesheet" href="casa.css">
+</head>
+<body>
+
+  <!-- 🔹 NAVBAR SUPERIOR -->
+  <header>
+    <div class="logo">
+      <img src="../../img/logo-fitconnet.png" alt="Logo FitConnet">
+      <span>FitConnet</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../../principal/user/user.html" class="activo">Inicio</a></li>
+        <li><a href="../../principal/ejercicios/gym/gym.html">Gimnasio</a></li>
+        <li><a href="../../principal/ejercicios/calistenia/calistenia.html">Calistenia</a></li>
+        <li><a href="../../principal/contacto/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🔹 CONTENIDO PRINCIPAL -->
+  <main class="container">
+    <!-- Sección de Ejercicios -->
+    <section class="lista-ejercicios">
+      <h2>Rutinas Caseras</h2>
+      <div class="grid" id="contenedor-ejercicios">
+        <div class="ejercicio-card">
+          <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/sport-1834661_1280.jpg" alt="Flexiones">
+          <h3>Flexiones</h3>
+          <p>Fortalece pecho, hombros y brazos. Ideal para principiantes.</p>
+        </div>
+        <div class="ejercicio-card">
+          <img src="https://cdn.pixabay.com/photo/2016/03/27/22/16/yoga-1284657_1280.jpg" alt="Plancha">
+          <h3>Plancha</h3>
+          <p>Ejercicio isométrico para fortalecer el abdomen y la espalda baja.</p>
+        </div>
+        <div class="ejercicio-card">
+          <img src="https://cdn.pixabay.com/photo/2017/08/02/00/44/fitness-2568880_1280.jpg" alt="Sentadillas">
+          <h3>Sentadillas</h3>
+          <p>Trabaja glúteos, piernas y mejora la postura corporal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de agregar nuevos ejercicios -->
+    <section class="agregar-ejercicio">
+      <h2>Agregar Nuevo Ejercicio</h2>
+      <form id="form-ejercicio">
+        <input type="text" id="nombre" placeholder="Nombre del ejercicio" required>
+        <textarea id="descripcion" placeholder="Descripción del ejercicio" required></textarea>
+        <input type="url" id="imagen" placeholder="URL de imagen (opcional)">
+        <button type="submit">Agregar Ejercicio</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- 🔹 SCRIPT -->
+  <script>
+    const form = document.getElementById('form-ejercicio');
+    const grid = document.getElementById('contenedor-ejercicios');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const descripcion = document.getElementById('descripcion').value;
+      const imagen = document.getElementById('imagen').value || 'https://cdn-icons-png.flaticon.com/512/1041/1041882.png';
+
+      const card = document.createElement('div');
+      card.classList.add('ejercicio-card');
+      card.innerHTML = `
+        <img src="${imagen}" alt="${nombre}">
+        <h3>${nombre}</h3>
+        <p>${descripcion}</p>
+      `;
+
+      grid.appendChild(card);
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

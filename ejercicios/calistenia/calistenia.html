@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios de Calistenia | FitConnet</title>
+  <link rel="stylesheet" href="calistenia.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../img/logo-fitconnet.png" alt="FitConnet Logo">
+      <span>FitConnet</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../../principal/user/user.html">Inicio</a></li>
+        <li><a href="../gym/gym.html">Gimnasio</a></li>
+        <li><a href="../casa/casa.html">Casa</a></li>
+        <li><a href="../calistenia/calistenia.html" class="activo">Calistenia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Entrena con tu propio cuerpo</h1>
+      <p>Descubre rutinas de calistenia que mejoran tu fuerza, coordinación y resistencia. Agrega tus ejercicios personalizados y progresa con tu propio peso corporal. 💪</p>
+      <button id="addExerciseBtn" class="btn">Añadir Ejercicio</button>
+    </section>
+
+    <section class="lista-ejercicios" id="exerciseList">
+      <h2>Mis Ejercicios de Calistenia</h2>
+
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2016/03/27/19/31/man-1282232_1280.jpg" alt="Flexiones">
+        <h3>Flexiones</h3>
+        <p>Fortalece pecho, hombros y tríceps con este clásico del entrenamiento corporal.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/fitness-1835736_1280.jpg" alt="Dominadas">
+        <h3>Dominadas</h3>
+        <p>Trabaja la espalda y los bíceps mejorando tu fuerza y control.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal para agregar ejercicios -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Agregar Nuevo Ejercicio</h2>
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="Ej: Plancha lateral">
+
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" rows="3" placeholder="Describe brevemente el ejercicio..."></textarea>
+
+      <label for="imagen">URL de imagen:</label>
+      <input type="text" id="imagen" placeholder="Pega aquí una URL de imagen">
+
+      <div class="modal-buttons">
+        <button id="guardarBtn" class="btn">Guardar</button>
+        <button id="cerrarBtn" class="btn btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 FitConnet | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="calistenia.js"></script>
+</body>
+</html>
