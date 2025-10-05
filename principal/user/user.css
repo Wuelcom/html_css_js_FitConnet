@@ -1,4 +1,6 @@
-/* General */
+/* ============================= */
+/* GENERAL                      */
+/* ============================= */
 * {
     margin: 0;
     padding: 0;
@@ -11,12 +13,14 @@ body {
     color: rgb(36, 36, 36);
 }
 
-/* Sección 1: Menú y cabecera */
+/* ============================= */
+/* SECCIÓN 1: MENÚ Y CABECERA    */
+/* ============================= */
 .section1 {
     display: flex;
-    align-items: center; /*elementos centrados verticalmente*/
+    align-items: center;
     justify-content: space-between;
-    padding: 60px 20px; /*espacio padding*/
+    padding: 60px 20px;
     background: rgb(36, 36, 36);
     color: white;
     position: fixed;
@@ -24,7 +28,7 @@ body {
     top: 0;
     z-index: 1000;
     border-bottom: 5px solid purple;
-    height: 70px; /* Ajusta la altura */
+    height: 70px;
 }
 
 .menu-container {
@@ -66,21 +70,21 @@ body {
 }
 
 .logo {
-    width: 110px; /*ancho*/
-    height: auto; /*proporción de la imagen */
-    margin: 0 20px; /*margen para evitar superposición */
-    display: block; /*bloque */
+    width: 110px;
+    height: auto;
+    margin: 0 20px;
+    display: block;
     border-radius: 5px;
 }
 
 .center-buttons button,
 .right-buttons button {
     margin: 0 5px;
-    padding: 10px 20px; /*botones más grandes */
+    padding: 10px 20px;
     cursor: pointer;
     border: none;
     border-radius: 50px;
-    font-size: 18px; /* tamaño de la letra */
+    font-size: 18px;
 }
 
 .center-buttons button {
@@ -93,14 +97,18 @@ body {
     color: white;
 }
 
-/* Secciones generales */
+/* ============================= */
+/* SECCIONES GENERALES           */
+/* ============================= */
 section {
     padding: 80px 20px;
     text-align: center;
     border-bottom: 3px solid purple;
 }
 
-/* Sección 2: Imagen de bienvenida */
+/* ============================= */
+/* SECCIÓN 2: IMAGEN DE BIENVENIDA */
+/* ============================= */
 .section2 {
     background: rgb(36, 36, 36);
     color: white;
@@ -112,7 +120,9 @@ section {
     max-width: 800px;
 }
 
-/* Sección 3: Planes */
+/* ============================= */
+/* SECCIÓN 3: PLANES             */
+/* ============================= */
 .section3 {
     background: white;
     color: rgb(36, 36, 36);
@@ -154,7 +164,9 @@ section {
     border-radius: 5px;
 }
 
-/* Sección 4: Carrusel de servicios */
+/* ============================= */
+/* SECCIÓN 4: CARRUSEL DE SERVICIOS */
+/* ============================= */
 .section4 {
     background: rgb(36, 36, 36);
     color: white;
@@ -198,28 +210,143 @@ section {
     border-radius: 5px;
 }
 
-/* Sección 5: Red social */
+/* ============================= */
+/* SECCIÓN 5: RED SOCIAL / PUBLICACIONES */
+/* ============================= */
 .section5 {
-    background: white;
-    color: rgb(36, 36, 36);
+    display: flex;
+    background: #2c2c2c;
+    color: white;
+    padding: 0;
+    height: auto;
 }
 
-.post {
-    border: 1px solid purple;
+/* Panel izquierdo (amigos) */
+.friends-panel {
+    background: #1c1c1c;
+    width: 300px;
     padding: 20px;
-    margin: 10px auto;
-    width: 50%;
-    border-radius: 10px;
-    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-right: 4px solid purple;
 }
 
-/* Sección 6: Próxima app */
+.friends-panel h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.friend {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.friend img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: black;
+}
+
+.friend a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Panel derecho (publicaciones) */
+.posts-panel {
+    flex: 1;
+    padding: 30px;
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.posts-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.posts-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.posts-header a {
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    position: absolute;
+    right: 0;
+}
+
+/* Tarjetas de publicaciones */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+        width: 80%;
+}   
+
+.post-card {
+    background: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+.post-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.post-card h3 img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.post-card p {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.post-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* ============================= */
+/* SECCIÓN 6: PRÓXIMA APP        */
+/* ============================= */
 .section6 {
     background: rgb(36, 36, 36);
     color: white;
 }
 
-/* Sección 7: Contacto */
+/* ============================= */
+/* SECCIÓN 7: CONTACTO           */
+/* ============================= */
 .section7 {
     background: white;
     color: rgb(36, 36, 36);
@@ -230,7 +357,9 @@ section {
     padding: 20px;
 }
 
-/* Sección 8: Pie de página */
+/* ============================= */
+/* SECCIÓN 8: PIE DE PÁGINA      */
+/* ============================= */
 .section8 {
     display: flex;
     align-items: center;
