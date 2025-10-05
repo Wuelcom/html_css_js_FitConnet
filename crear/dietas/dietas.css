@@ -1,0 +1,109 @@
+body {
+  background-color: #1f1f1f;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 3px solid #8b00b2;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  background-color: #8b00b2;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #b100e8;
+}
+
+main {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  color: #b100e8;
+  margin-bottom: 10px;
+}
+
+.intro {
+  color: #ddd;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.dietas-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.dieta-card {
+  background-color: #2a2a2a;
+  border: 2px solid #8b00b2;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  padding: 20px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(139, 0, 178, 0.3);
+}
+
+.dieta-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(177, 0, 232, 0.6);
+}
+
+.dieta-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #8b00b2;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #b100e8;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #1f1f1f;
+  border-top: 2px solid #8b00b2;
+  margin-top: 50px;
+}
