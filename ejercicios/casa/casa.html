@@ -7,30 +7,42 @@
   <link rel="stylesheet" href="casa.css">
 </head>
 <body>
-
-  <!-- 🔹 NAVBAR SUPERIOR -->
-  <header>
+  <!-- 🔹 NAVBAR -->
+  <header class="navbar">
     <div class="logo">
       <img src="../../img/logo-fitconnet.png" alt="Logo FitConnet">
       <span>FitConnet</span>
     </div>
-
-    <nav>
-      <ul>
-        <li><a href="../../principal/user/user.html" class="activo">Inicio</a></li>
-        <li><a href="../../principal/ejercicios/gym/gym.html">Gimnasio</a></li>
-        <li><a href="../../principal/ejercicios/calistenia/calistenia.html">Calistenia</a></li>
-        <li><a href="../../principal/contacto/contacto.html">Contacto</a></li>
-      </ul>
+    <nav class="nav-links">
+      <a href="../../principal/user/user.html">Inicio</a>
+      <a href="../gym/gym.html">Gimnasio</a>
+      <a href="../calistenia/calistenia.html">Calistenia</a>
+      <a href="../../principal/contacto/contacto.html">Contacto</a>
     </nav>
   </header>
 
   <!-- 🔹 CONTENIDO PRINCIPAL -->
-  <main class="container">
-    <!-- Sección de Ejercicios -->
-    <section class="lista-ejercicios">
-      <h2>Rutinas Caseras</h2>
-      <div class="grid" id="contenedor-ejercicios">
+  <main>
+    <h1>Ejercicios en Casa</h1>
+    <p class="descripcion">
+      Explora y crea tus rutinas caseras para mantenerte activo sin salir de casa 🏠
+    </p>
+
+    <!-- 🔸 FORMULARIO -->
+    <section class="formulario">
+      <h2>Agregar un Nuevo Ejercicio</h2>
+      <form id="form-ejercicio">
+        <input type="text" id="nombre" placeholder="Nombre del ejercicio" required>
+        <textarea id="descripcion" placeholder="Descripción del ejercicio" required></textarea>
+        <input type="url" id="imagen" placeholder="URL de imagen (opcional)">
+        <button type="submit">Agregar Ejercicio</button>
+      </form>
+    </section>
+
+    <!-- 🔸 LISTA DE EJERCICIOS -->
+    <section class="ejercicios">
+      <h2>Mis Ejercicios</h2>
+      <div id="contenedor-ejercicios" class="grid">
         <div class="ejercicio-card">
           <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/sport-1834661_1280.jpg" alt="Flexiones">
           <h3>Flexiones</h3>
@@ -48,20 +60,12 @@
         </div>
       </div>
     </section>
-
-    <!-- Sección de agregar nuevos ejercicios -->
-    <section class="agregar-ejercicio">
-      <h2>Agregar Nuevo Ejercicio</h2>
-      <form id="form-ejercicio">
-        <input type="text" id="nombre" placeholder="Nombre del ejercicio" required>
-        <textarea id="descripcion" placeholder="Descripción del ejercicio" required></textarea>
-        <input type="url" id="imagen" placeholder="URL de imagen (opcional)">
-        <button type="submit">Agregar Ejercicio</button>
-      </form>
-    </section>
   </main>
 
-  <!-- 🔹 SCRIPT -->
+  <footer>
+    <p>© 2025 FitConnet | Entrena en casa, entrena en cualquier lugar 💪</p>
+  </footer>
+
   <script>
     const form = document.getElementById('form-ejercicio');
     const grid = document.getElementById('contenedor-ejercicios');
@@ -79,11 +83,9 @@
         <h3>${nombre}</h3>
         <p>${descripcion}</p>
       `;
-
       grid.appendChild(card);
       form.reset();
     });
   </script>
-
 </body>
 </html>
