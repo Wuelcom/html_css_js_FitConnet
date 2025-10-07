@@ -7,66 +7,64 @@
   <link rel="stylesheet" href="calistenia.css">
 </head>
 <body>
-  <header>
+  <!-- Header -->
+ <header>
+  <nav>
     <div class="logo">
       <img src="../../img/logo-fitconnet.png" alt="FitConnet Logo">
-      <span>FitConnet</span>
+      <h1>FitConnet</h1>
     </div>
-    <nav>
-      <ul>
-        <li><a href="../../principal/user/user.html">Inicio</a></li>
-        <li><a href="../gym/gym.html">Gimnasio</a></li>
-        <li><a href="../casa/casa.html">Casa</a></li>
-        <li><a href="../calistenia/calistenia.html" class="activo">Calistenia</a></li>
-      </ul>
-    </nav>
-  </header>
+    <ul class="menu">
+      <li><a href="../../principal/user/user.html">Inicio</a></li>
+      <li><a href="../gym/gym.html">Gimnasio</a></li>
+      <li><a href="../casa/casa.html">Casa</a></li>
+      <li><a href="../calistenia/calistenia.html" class="activo">Calistenia</a></li>
+    </ul>
+  </nav>
+</header>
 
+
+  <!-- Contenido principal -->
   <main>
     <section class="intro">
-      <h1>Entrena con tu propio cuerpo</h1>
-      <p>Descubre rutinas de calistenia que mejoran tu fuerza, coordinación y resistencia. Agrega tus ejercicios personalizados y progresa con tu propio peso corporal. 💪</p>
-      <button id="addExerciseBtn" class="btn">Añadir Ejercicio</button>
+      <h1>Ejercicios de Calistenia</h1>
+      <p>Explora, crea y administra tus ejercicios personalizados para mejorar tu control y fuerza corporal 💪</p>
     </section>
 
-    <section class="lista-ejercicios" id="exerciseList">
-      <h2>Mis Ejercicios de Calistenia</h2>
+    <!-- Formulario de nuevo ejercicio -->
+    <section class="formulario">
+      <h2>Agregar un Nuevo Ejercicio</h2>
+      <form id="formCalistenia">
+        <input type="text" id="nombre" placeholder="Nombre del ejercicio" required>
+        <input type="text" id="grupo" placeholder="Grupo muscular (Ej: Pecho, Espalda, Piernas)" required>
+        <input type="number" id="series" placeholder="Series" min="1" required>
+        <input type="number" id="repeticiones" placeholder="Repeticiones" min="1" required>
+        <input type="text" id="imagen" placeholder="URL de imagen (opcional)">
+        <button type="submit" class="btn">Agregar Ejercicio</button>
+      </form>
+    </section>
 
-      <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2016/03/27/19/31/man-1282232_1280.jpg" alt="Flexiones">
-        <h3>Flexiones</h3>
-        <p>Fortalece pecho, hombros y tríceps con este clásico del entrenamiento corporal.</p>
-      </div>
+    <!-- Lista de ejercicios -->
+    <section id="listaEjercicios">
+      <h2>Mis Ejercicios</h2>
+      <div id="contenedorEjercicios" class="tarjetas">
+        <!-- Ejercicios predefinidos -->
+        <div class="tarjeta">
+          <img src="https://cdn.pixabay.com/photo/2016/03/27/19/31/man-1282232_1280.jpg" alt="Flexiones">
+          <h3>Flexiones</h3>
+          <p>Fortalece pecho, hombros y tríceps con este clásico del entrenamiento corporal.</p>
+        </div>
 
-      <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/fitness-1835736_1280.jpg" alt="Dominadas">
-        <h3>Dominadas</h3>
-        <p>Trabaja la espalda y los bíceps mejorando tu fuerza y control.</p>
+        <div class="tarjeta">
+          <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/fitness-1835736_1280.jpg" alt="Dominadas">
+          <h3>Dominadas</h3>
+          <p>Trabaja la espalda y los bíceps mejorando tu fuerza y control.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Modal para agregar ejercicios -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <h2>Agregar Nuevo Ejercicio</h2>
-
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" placeholder="Ej: Plancha lateral">
-
-      <label for="descripcion">Descripción:</label>
-      <textarea id="descripcion" rows="3" placeholder="Describe brevemente el ejercicio..."></textarea>
-
-      <label for="imagen">URL de imagen:</label>
-      <input type="text" id="imagen" placeholder="Pega aquí una URL de imagen">
-
-      <div class="modal-buttons">
-        <button id="guardarBtn" class="btn">Guardar</button>
-        <button id="cerrarBtn" class="btn btn-secondary">Cancelar</button>
-      </div>
-    </div>
-  </div>
-
+  <!-- Footer -->
   <footer>
     <p>© 2025 FitConnet | Todos los derechos reservados</p>
   </footer>
