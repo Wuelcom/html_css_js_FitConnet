@@ -23,18 +23,33 @@
                     <input type="email" placeholder="Correo" required>
                     <input type="password" placeholder="Contraseña:" required>
 
-                    <select required>
-                        <option value="" disabled selected>Selecciona un objetivo:</option>
-                        <option value="perder_peso">Perder peso</option>
-                        <option value="ganar_masa">Ganar masa muscular</option>
-                        <option value="mantener_forma">Mantener forma</option>
-                    </select>
+                    <div class="form-row">
+                        <select required>
+                            <option value="" disabled selected>objetivo:</option>
+                            <option value="perder_peso">Perder peso</option>
+                            <option value="ganar_masa">Ganar masa muscular</option>
+                            <option value="mantener_forma">Mantener forma</option>
+                        </select>
+
+                        <select required>
+                            <option value="" disabled selected>rol:</option>
+                            <option value="usuario">Usuario</option>
+                            <option value="entrenador">Entrenador</option>
+                            <option value="administrador">Administrador</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="number" placeholder="Edad:" required>
+                        <input type="number" placeholder="Altura (cm):" required>
+                        <input type="number" placeholder="Peso (kg):" required>
+                    </div>
 
                     <select required>
-                        <option value="" disabled selected>Selecciona un rol:</option>
-                        <option value="usuario">Usuario</option>
-                        <option value="entrenador">Entrenador</option>
-                        <option value="administrador">Administrador</option>
+                        <option value="" disabled selected>Género:</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
                     </select>
 
                     <button type="submit">Crear</button>
